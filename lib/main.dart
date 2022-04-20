@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'core/observer/bloc_observer_info.dart';
+import 'features/main/presentation/cubit/gallery/gallery_cubit.dart';
 import 'features/main/presentation/cubit/place/place_cubit.dart';
+import 'features/main/presentation/cubit/search_gallery/search_gallery_cubit.dart';
 import 'features/main/presentation/cubit/search_place/search_place_cubit.dart';
 import 'features/main/presentation/cubit/user/user_cubit.dart';
 import 'features/main/presentation/screen/main_screen.dart';
@@ -29,6 +31,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => di.sl<UserCubit>()),
         BlocProvider(create: (context) => di.sl<PlaceCubit>()),
         BlocProvider(create: (context) => di.sl<SearchPlaceCubit>()),
+        BlocProvider(create: (context) => di.sl<GalleryCubit>()),
+        BlocProvider(create: (context) => di.sl<SearchGalleryCubit>()),
       ],
       child: MaterialApp(
         theme: ThemeConfig.defaultTheme,
