@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../shared/config/size_config.dart';
 import '../../../../shared/widgets/custom_box_shadow.dart';
 import '../../data/models/tab_model.dart';
+import '../cubit/user/user_cubit.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -15,6 +18,7 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       backgroundColor: Colors.white,
       body: mockListTabsModel[currentTab].page,
@@ -52,6 +56,9 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   void _moveTab(int index) {
+    if (index == 2) {
+      context.read<UserCubit>().getUser();
+    }
     setState(() => currentTab = index);
   }
 }
