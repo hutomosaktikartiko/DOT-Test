@@ -21,29 +21,29 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
-  # Shimmer
-  shimmer: ^2.0.0
-  # Local Cache
-  shared_preferences: ^2.0.6
   # Internet Checker
   connectivity_plus: ^2.1.0
-  # State Management
-  flutter_bloc: ^7.3.0
-  # Dialog
-  fluttertoast: ^8.0.5
-  ndialog: ^4.1.0
-  # Service locator
-  get_it: ^7.1.3
   # Internet
   dio: ^4.0.0
   # Value Equality
   equatable: ^2.0.3
+  flutter:
+    sdk: flutter
+  # State Management
+  flutter_bloc: ^7.3.0
   # SVG
   flutter_svg: ^0.22.0
+  # Dialog
+  ndialog: ^4.1.0
+  # Service locator
+  get_it: ^7.1.3
+  # Local Cache
+  shared_preferences: ^2.0.6
+  # Shimmer
+  shimmer: ^2.0.0
 
 dev_dependencies:
+  flutter_pw_validator: ^1.4.2
   flutter_test:
     sdk: flutter
 

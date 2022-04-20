@@ -6,6 +6,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'core/error/interceptor_info.dart';
 import 'core/network/network_info.dart';
 import 'core/utils/preferences_info.dart';
+import 'features/auth/presentation/cubit/email/email_cubit.dart';
+import 'features/auth/presentation/cubit/password/password_cubit.dart';
 import 'features/main/data/datasources/gallery_remote_data_source.dart';
 import 'features/main/data/datasources/place_remote_data_source.dart';
 import 'features/main/data/datasources/user_remote_data_source.dart';
@@ -41,6 +43,8 @@ Future<void> _auth() async {
   // Repository
 
   // Cubit
+  sl.registerFactory(() => EmailCubit());
+  sl.registerFactory(() => PasswordCubit());
 }
 
 Future<void> _main() async {
