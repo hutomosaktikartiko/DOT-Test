@@ -13,12 +13,12 @@ class CustomTextField extends StatelessWidget {
   final TextAlign? textAlign;
   final Widget? prefixIcon, suffixWidget;
   final Color enabledBorderColor, focusedBorderColor, fillColor;
-  final Function? onTap, onChanged, onEditingComplete;
+  final Function? onTap, onEditingComplete, onFieldSubmitted;
   final bool autofocus, obscureText, readOnly;
   final FocusNode? focusNode;
   final TextInputType keyboardType;
   final TextInputAction textInputAction;
-  final Function(String value)? onFieldSubmitted;
+  final Function(String value)? onChanged;
 
   const CustomTextField({
     Key? key,
@@ -66,7 +66,7 @@ class CustomTextField extends StatelessWidget {
       textInputAction: textInputAction,
       onChanged: (text) {
         if (onChanged != null) {
-          onChanged!();
+          onChanged!(text);
         }
       },
       onEditingComplete: () {

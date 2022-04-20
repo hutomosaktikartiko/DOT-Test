@@ -15,7 +15,7 @@ class Error extends StatelessWidget {
     return SizedBox(
       height: SizeConfig.screenHeight * 0.8,
       child: Center(
-        child: Text("Error"),
+        child: Text(message ?? "Error"),
       ),
     );
   }

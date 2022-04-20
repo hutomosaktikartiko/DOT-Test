@@ -33,9 +33,7 @@ class _UserPageState extends State<UserPage> {
           padding: EdgeInsets.symmetric(horizontal: SizeConfig.defaultMargin),
           children: [
             BlocBuilder<UserCubit, UserState>(builder: (context, state) {
-              if (state is UserLoading) {
-                return Loading();
-              } else if (state is UserLoaded) {
+              if (state is UserLoaded) {
                 return Loaded(
                   user: state.user,
                 );

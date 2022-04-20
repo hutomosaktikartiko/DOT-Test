@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../shared/config/size_config.dart';
 import '../../../../shared/widgets/custom_box_shadow.dart';
 import '../../data/models/tab_model.dart';
+import '../cubit/place/place_cubit.dart';
 import '../cubit/user/user_cubit.dart';
 
 class MainScreen extends StatefulWidget {
@@ -56,7 +57,9 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   void _moveTab(int index) {
-    if (index == 2) {
+    if (index == 0) {
+      context.read<PlaceCubit>().getPlace();
+    } else if (index == 2) {
       context.read<UserCubit>().getUser();
     }
     setState(() => currentTab = index);
