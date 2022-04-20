@@ -25,28 +25,36 @@ Beberapa custom widget default bawaan architecture yang bisa digunakan:
 ## Project Structure
 ```
 -assets/
-    |--examples         -> Dummy image projects
-    |--fonts/           -> Any fonts will we use
+    |--examples                 -> Dummy image projects
+    |--fonts/                   -> Any fonts will we use
         |--font_name
-    |--icons            -> Custom icons based on design
-    |--images           -> Offline images like placeholder, etc.
+    |--icons                    -> Custom icons based on design
+    |--images                   -> Offline images like placeholder, etc.
 -lib/
     |--core/
-        |--error        -> Error handling (local or remote datasources)
-        |--models       -> For global model like ReturnValueModel
-        |--network      -> Check internet status (connected or disconnect)
-        |--utils        -> Others like preferences, etc.
-    |--data/
-        |--datasources  -> Data sources (remote and local)
-        |--models       -> App models
-        |--repositories -> To determine where the data is taken from (Local or remote)
+        |--error                -> Error handling (local or remote datasources)
+        |--models               -> For global model like ReturnValueModel
+        |--network              -> Check internet status (connected or disconnect)
+        |--utils                -> Others like preferences, etc.
+    |--features/                -> Split app to small features
+        |--feature_a
+            |--data/
+                |--datasources  -> Data sources (remote and local)
+                |--models       -> App models
+                |--repositories -> To determine where the data is taken from (Local or remote)
+            |--presentation/
+                |--cubit        -> State management
+                |--pages        -> Part of screen
+                |--screens      -> Full view of app
+                |--widgets      -> Reusable widgets
+        |--feature_b         
     |--presentation/
-        |--cubit        -> State management
-        |--pages        -> Part of screen
-        |--screens      -> Full view of app
-        |--widgets      -> Reusable widgets
+        |--cubit                -> State management
+        |--pages                -> Part of screen
+        |--screens              -> Full view of app
+        |--widgets              -> Reusable widgets
     |--shared/
-        |--config       -> Static variable
-        |--extension    -> For custom global extension
-        |--widgets      -> Reusable global widgets
+        |--config               -> Static variable
+        |--extension            -> For custom global extension
+        |--widgets              -> Reusable global widgets
 ```
