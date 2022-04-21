@@ -48,11 +48,6 @@ Beberapa custom widget default bawaan architecture yang bisa digunakan:
                 |--screens      -> Full view of app
                 |--widgets      -> Reusable widgets
         |--feature_b         
-    |--presentation/
-        |--cubit                -> State management
-        |--pages                -> Part of screen
-        |--screens              -> Full view of app
-        |--widgets              -> Reusable widgets
     |--shared/
         |--config               -> Static variable
         |--extension            -> For custom global extension
